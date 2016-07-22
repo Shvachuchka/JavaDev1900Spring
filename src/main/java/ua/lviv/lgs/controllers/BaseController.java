@@ -24,10 +24,5 @@ public class BaseController {
         return "home";
     }
 
-    @RequestMapping(value = "/authors/all", method = RequestMethod.GET)
-    public String allAuthors(Model model){
-        List<Author> authorList = authorService.findAll();
-        model.addAttribute("authors", authorList);
-        return "allAuthors";
-    }
+
 }

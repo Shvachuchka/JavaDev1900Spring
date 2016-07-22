@@ -12,17 +12,14 @@
     <title>Title</title>
 </head>
 <body>
-    <c:forEach items="${authors}" var="a">
-        <div style="width: 300px; height: 300px; background-color: darkgrey; color: white; float: left; margin: 20px; border: 3px double black; border-radius: 10px;">
-            <p style="text-align: center; padding: 0 10px;">${a.name}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.secondname}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.country}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.age}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.age}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.age}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.age}</p>
-            <p style="text-align: center; padding: 0 10px;">${a.age}</p>
-        </div>
-    </c:forEach>
+<c:forEach items="${authors}" var="a">
+    <div style="width: 300px; height: 300px; background-color: darkgrey; color: white; float: left; margin: 10px; border: 3px double black; border-radius: 50%;">
+        <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.name}</p>
+        <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.secondname}</p>
+        <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.country}</p>
+        <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.age}</p>
+    </div>
+</c:forEach>
+<p style="clear: left; text-align: center"><a href="/author/new">Add new Author</a></p>
 </body>
 </html>
