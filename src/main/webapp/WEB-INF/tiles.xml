@@ -21,4 +21,8 @@
         <put-attribute name="body" value="/views/newAuthor.jsp"/>
     </definition>
 
+    <definition name="authorPage" extends="base.definition">
+        <put-attribute name="body" value="/views/authorPage.jsp"/>
+    </definition>
+
 </tiles-definitions>

@@ -41,6 +41,10 @@ public class AuthorServiceImpl implements AuthorService {
         authorDao.delete(author);
     }
 
+    public void add(Author author) {
+        authorDao.add(author);
+    }
+
     public Author findOne(int id) {
         return authorDao.findOne(id);
     }
