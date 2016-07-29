@@ -25,4 +25,12 @@
         <put-attribute name="body" value="/views/authorPage.jsp"/>
     </definition>
 
+    <definition name="registration" extends="base.definition">
+        <put-attribute name="body" value="/views/registration.jsp"/>
+    </definition>
+
+    <definition name="login" extends="base.definition">
+        <put-attribute name="body" value="/views/login.jsp"/>
+    </definition>
+
 </tiles-definitions>

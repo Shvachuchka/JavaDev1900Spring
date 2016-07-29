@@ -24,5 +24,8 @@ public class BaseController {
         return "home";
     }
 
-
+    @RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+    public String login(){
+        return "login";
+    }
 }

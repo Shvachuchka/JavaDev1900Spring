@@ -8,8 +8,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<sec:authorize access="isAnonymous()"><a href="/login">Login</a></sec:authorize>
+<sec:authorize access="isAnonymous()"><a href="/loginpage">Login</a></sec:authorize>
+<sec:authorize access="isAnonymous()"><a href="/registration">Registraion</a></sec:authorize>
 <sec:authorize access="isAuthenticated()">
+    Hello, <sec:authentication property="name"/>
     <form:form method="post" action="/logout">
         <button type="submit">Logout!</button>
     </form:form>
