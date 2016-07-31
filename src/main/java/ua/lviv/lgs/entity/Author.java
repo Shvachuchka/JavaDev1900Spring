@@ -20,7 +20,7 @@ public class Author {
     private String country;
     @Column
     private int age;
-    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Book>bookList;
 
     public Author() {

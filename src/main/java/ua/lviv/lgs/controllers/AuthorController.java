@@ -50,4 +50,22 @@ public class AuthorController {
         return "authorPage";
     }
 
+    @RequestMapping(value = "/author/edit/{id}", method = RequestMethod.GET)
+    public String edit(@PathVariable String id, Model model){
+        model.addAttribute("author",authorService.findOne(Integer.parseInt(id)));
+        return "authorEdit";
+    }
+
+    @RequestMapping(value = "/author/edit", method = RequestMethod.POST)
+    public String edit(@ModelAttribute Author author){
+        authorService.edit(author);
+        return "redirect:/authors/all";
+    }
+
+    @RequestMapping(value = "/author/delete/{id}", method = RequestMethod.POST)
+    public String delete(@PathVariable String id){
+        authorService.delete(Integer.parseInt(id));
+        return "redirect:/authors/all";
+    }
+
 }

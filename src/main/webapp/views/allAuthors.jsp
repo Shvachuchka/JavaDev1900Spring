@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Title</title>
@@ -20,6 +21,10 @@
             <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.secondname}</p>
             <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.country}</p>
             <p style="text-align: center; padding: 0 10px; font-size: 24pt">${a.age}</p>
+            <p><a href="/author/edit/${a.id}">Модифікувати</a></p>
+            <p><form:form action="/author/delete/${a.id}" method="post">
+                <button type="submit">Видалити</button>
+            </form:form></p>
         </div>
     </a>
 </c:forEach>

@@ -10,7 +10,7 @@ import java.util.List;
 public interface AuthorService {
     void add(String name, String secondname, String country, int age);
     void add(Author author);
-    void edit(int id, String name, String secondname, String country, int age);
+    void edit(Author author);
     void delete(int id);
     Author findOne(int id);
     List<Author> findAll();

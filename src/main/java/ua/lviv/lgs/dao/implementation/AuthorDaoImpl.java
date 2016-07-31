@@ -30,7 +30,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Transactional
     public void delete(Author author) {
-        entityManager.remove(author);
+        entityManager.remove(entityManager.contains(author) ? author : entityManager.merge(author));
     }
 
     @Transactional

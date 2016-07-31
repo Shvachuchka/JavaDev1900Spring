@@ -26,14 +26,8 @@ public class AuthorServiceImpl implements AuthorService {
         authorDao.add(author);
     }
 
-    public void edit(int id, String name, String secondname, String country, int age) {
-        Author author = authorDao.findOne(id);
-        if(name != null){
-            author.setName(name);
-        }
-        if(secondname!=null){
-            author.setSecondname(secondname);
-        }
+    public void edit(Author author) {
+        authorDao.edit(author);
     }
 
     public void delete(int id) {
