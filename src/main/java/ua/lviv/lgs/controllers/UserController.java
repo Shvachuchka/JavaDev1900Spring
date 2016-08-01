@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ua.lviv.lgs.entity.User;
 import ua.lviv.lgs.services.UserService;
 
+import java.security.Principal;
+
 @Controller
 public class UserController {
 
@@ -26,7 +28,13 @@ public class UserController {
     public String registration(@ModelAttribute User user){
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userService.add(user);
+        userService.addOrEdit(user);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/cabinet", method = RequestMethod.GET)
+    public String cabinet(Principal principal, Model model){
+        model.addAttribute("user",userService.findOne(Integer.parseInt(principal.getName())));
+        return "cabinet";
     }
 }

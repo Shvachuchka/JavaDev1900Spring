@@ -37,4 +37,8 @@
         <put-attribute name="body" value="/views/authorEdit.jsp"/>
     </definition>
 
+    <definition name="cabinet" extends="base.definition">
+        <put-attribute name="body" value="/views/cabinet.jsp"/>
+    </definition>
+
 </tiles-definitions>

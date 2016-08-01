@@ -2,8 +2,8 @@ package ua.lviv.lgs.services.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.lviv.lgs.dao.AuthorDao;
 import ua.lviv.lgs.entity.Author;
+import ua.lviv.lgs.repository.AuthorRepo;
 import ua.lviv.lgs.services.AuthorService;
 
 import java.util.List;
@@ -15,35 +15,21 @@ import java.util.List;
 public class AuthorServiceImpl implements AuthorService {
 
     @Autowired
-    private AuthorDao authorDao;
+    private AuthorRepo authorRepo;
 
-    public void add(String name, String secondname, String country, int age) {
-        Author author = new Author();
-        author.setName(name);
-        author.setSecondname(secondname);
-        author.setCountry(country);
-        author.setAge(age);
-        authorDao.add(author);
-    }
-
-    public void edit(Author author) {
-        authorDao.edit(author);
+    public void addOrEdit(Author author) {
+        authorRepo.save(author);
     }
 
     public void delete(int id) {
-        Author author = authorDao.findOne(id);
-        authorDao.delete(author);
-    }
-
-    public void add(Author author) {
-        authorDao.add(author);
+        authorRepo.delete(id);
     }
 
     public Author findOne(int id) {
-        return authorDao.findOne(id);
+        return authorRepo.findOne(id);
     }
 
     public List<Author> findAll() {
-        return authorDao.findAll();
+        return authorRepo.findAll();
     }
 }

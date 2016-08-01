@@ -8,8 +8,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form:form action="/author/edit" method="post" modelAttribute="author">
-    <form:input path="name" value="${author.name}"/>
-    <form:input path="secondname" value="${author.secondname}"/>
-    <form:input path="country" value="${author.country}"/>
-    <form:button>Модифікувати</form:button>
+    <form:hidden path="id"/>
+    <form:input path="name"/>
+    <form:input path="secondname"/>
+    <form:input path="country"/>
+    <form:input path="age"/>
+    <form:button>Edit</form:button>
 </form:form>

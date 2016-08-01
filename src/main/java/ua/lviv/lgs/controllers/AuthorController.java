@@ -39,7 +39,7 @@ public class AuthorController {
 
     @RequestMapping(value = "/author/create", method = RequestMethod.POST)
     public String createAuthor(@ModelAttribute Author author){
-        authorService.add(author);
+        authorService.addOrEdit(author);
         return "redirect:/authors/all";
     }
 
@@ -52,14 +52,14 @@ public class AuthorController {
 
     @RequestMapping(value = "/author/edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable String id, Model model){
-        model.addAttribute("author",authorService.findOne(Integer.parseInt(id)));
+        model.addAttribute("author", authorService.findOne(Integer.parseInt(id)));
         return "authorEdit";
     }
 
     @RequestMapping(value = "/author/edit", method = RequestMethod.POST)
     public String edit(@ModelAttribute Author author){
-        authorService.edit(author);
-        return "redirect:/authors/all";
+        authorService.addOrEdit(author);
+        return "redirect:/author/page/"+String.valueOf(author.getId());
     }
 
     @RequestMapping(value = "/author/delete/{id}", method = RequestMethod.POST)
@@ -67,5 +67,4 @@ public class AuthorController {
         authorService.delete(Integer.parseInt(id));
         return "redirect:/authors/all";
     }
-
 }

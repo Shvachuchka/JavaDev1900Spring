@@ -1,6 +1,7 @@
 package ua.lviv.lgs.entity;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class User {
     private List<Book> bookList;
 
     public User() {
+        this.registrationDate= Calendar.getInstance().getTime();
     }
 
     public int getId() {
