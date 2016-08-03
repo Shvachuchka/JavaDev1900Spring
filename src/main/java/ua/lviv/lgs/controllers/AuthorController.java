@@ -22,13 +22,13 @@ public class AuthorController {
     public String allAuthors(Model model){
         List<Author> authorList = authorService.findAll();
         model.addAttribute("authors", authorList);
-        return "allAuthors";
+        return "views-author-all";
     }
 
     @RequestMapping(value = "/author/new", method = RequestMethod.GET)
     private String authorNew(Model model){
         model.addAttribute("author", new Author());
-        return "newAuthor";
+        return "views-author-new";
     }
 
 /*    @RequestMapping(value = "/author/create", method = RequestMethod.POST)
@@ -47,13 +47,13 @@ public class AuthorController {
     public String authorPage(@PathVariable String id, Model model){
         Author author = authorService.findOne(Integer.parseInt(id));
         model.addAttribute("author", author);
-        return "authorPage";
+        return "views-author-page";
     }
 
     @RequestMapping(value = "/author/edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable String id, Model model){
         model.addAttribute("author", authorService.findOne(Integer.parseInt(id)));
-        return "authorEdit";
+        return "views-author-edit";
     }
 
     @RequestMapping(value = "/author/edit", method = RequestMethod.POST)

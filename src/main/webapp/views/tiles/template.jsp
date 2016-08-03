@@ -11,6 +11,11 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div><tiles:insertAttribute name="header"/></div>

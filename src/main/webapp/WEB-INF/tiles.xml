@@ -9,36 +9,8 @@
         <put-attribute name="footer" value="/views/tiles/footer.jsp"/>
     </definition>
 
-    <definition name="home" extends="base.definition">
-        <put-attribute name="body" value="/views/home.jsp"/>
-    </definition>
-
-    <definition name="allAuthors" extends="base.definition">
-        <put-attribute name="body" value="/views/allAuthors.jsp"/>
-    </definition>
-
-    <definition name="newAuthor" extends="base.definition">
-        <put-attribute name="body" value="/views/newAuthor.jsp"/>
-    </definition>
-
-    <definition name="authorPage" extends="base.definition">
-        <put-attribute name="body" value="/views/authorPage.jsp"/>
-    </definition>
-
-    <definition name="registration" extends="base.definition">
-        <put-attribute name="body" value="/views/registration.jsp"/>
-    </definition>
-
-    <definition name="login" extends="base.definition">
-        <put-attribute name="body" value="/views/login.jsp"/>
-    </definition>
-
-    <definition name="authorEdit" extends="base.definition">
-        <put-attribute name="body" value="/views/authorEdit.jsp"/>
-    </definition>
-
-    <definition name="cabinet" extends="base.definition">
-        <put-attribute name="body" value="/views/cabinet.jsp"/>
-    </definition>
+   <definition name="*-*-*" extends="base.definition">
+        <put-attribute name="body" value="/{1}/{2}/{3}.jsp"/>
+   </definition>
 
 </tiles-definitions>
