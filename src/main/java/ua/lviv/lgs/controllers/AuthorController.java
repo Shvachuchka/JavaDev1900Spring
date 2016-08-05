@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import ua.lviv.lgs.entity.Author;
 import ua.lviv.lgs.services.AuthorService;
 
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,6 +57,19 @@ public class AuthorController {
         model.addAttribute("author", authorService.findOne(Integer.parseInt(id)));
         return "views-author-edit";
     }
+
+/*    @RequestMapping(value = "/test/{id}", method = RequestMethod.GET)
+    public String addToBasket(HttpSession httpSession, @PathVariable String id){
+        List<Author>authors = (List<Author>)httpSession.getAttribute("authors");
+        Author author = authorService.findOne(Integer.parseInt(id));
+        if(authors == null){
+            authors = new ArrayList<Author>();
+        }
+        authors.add(author);
+        System.out.println(authors);
+        httpSession.setAttribute("authors", authors);
+        return "redirect:/authors/all";
+    }*/
 
     @RequestMapping(value = "/author/edit", method = RequestMethod.POST)
     public String edit(@ModelAttribute Author author){

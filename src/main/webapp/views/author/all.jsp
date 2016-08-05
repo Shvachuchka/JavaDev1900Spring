@@ -15,7 +15,7 @@
 </head>
 <body>
 <c:forEach items="${authors}" var="a">
-    <a href="/author/page/${a.id}">
+    <a href="/test/${a.id}">
         <div style="width: 300px; height: 300px; background-color: darkgrey; color: white; float: left; margin: 10px; border: 3px double black; border-radius: 50%;">
             <p style="text-align: center; padding: 0 10px; font-size: 16pt">${a.name}</p>
             <p style="text-align: center; padding: 0 10px; font-size: 16pt">${a.secondname}</p>

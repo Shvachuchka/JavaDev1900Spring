@@ -13,5 +13,6 @@
 <body>
 <h1>Hello, world!</h1>
 <a href="/authors/all">All AUthors</a>
+<a href="/book/all">All Books</a>
 </body>
 </html>
